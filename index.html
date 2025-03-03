@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">Dashboard Logo</div>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard" class="active" data-page="dashboard"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a></li>
+                    <li><a href="#students" data-page="students"><i class="fas fa-user-graduate"></i> <span>Students</span></a></li>
+                    <li><a href="#alumni" data-page="alumni"><i class="fas fa-users"></i> <span>Alumni</span></a></li>
+                    <li><a href="#events" data-page="events"><i class="fas fa-calendar-alt"></i> <span>Events</span></a></li>
+                    <li><a href="#settings" data-page="settings"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Dashboard</h1> <span id="page-title"></span>
+                <div class="header-actions">
+                    <button id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</button>  <!-- Dark Mode Toggle Button -->
+                    <div class="user-info">Admin User</div>
+                </div>
+            </header>
+
+            <div class="dashboard-body">
+
+                <!-- Dashboard Page Content -->
+                <section id="dashboard-page" class="page-section active-page">
+                    <div class="card-grid">
+                        <div class="card card-students">
+                            <i class="icon students-icon"><i class="fas fa-user-graduate"></i></i>
+                            <div class="card-content">
+                                <h2>1,245</h2>
+                                <p>Total Students</p>
+                            </div>
+                        </div>
+
+                        <div class="card card-alumni">
+                            <i class="icon alumni-icon"><i class="fas fa-users"></i></i>
+                            <div class="card-content">
+                                <h2>856</h2>
+                                <p>Total Alumni</p>
+                            </div>
+                        </div>
+
+                        <div class="card card-events">
+                            <i class="icon events-icon"><i class="fas fa-calendar-alt"></i></i>
+                            <div class="card-content">
+                                <h2>12</h2>
+                                <p>Upcoming Events</p>
+                            </div>
+                        </div>
+
+                        <div class="card card-placement">
+                            <i class="icon placement-icon"><i class="fas fa-percentage"></i></i>
+                            <div class="card-content">
+                                <h2>89%</h2>
+                                <p>Placement Rate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-section">
+                        <h2>Fee Collection vs Expenses</h2>
+                        <div class="chart-container">
+                            <canvas id="feeChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="table-section">
+                        <h2>User Management</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>Registration Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dipti Gavali</td>
+                                    <td>Student</td>
+                                    <td>Jan 15, 2025</td>
+                                    <td>Active</td>
+                                    <td><button>Edit</button> <button>Deactivate</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Tom Cruise</td>
+                                    <td>Student</td>
+                                    <td>Feb 3, 2025</td>
+                                    <td>Active</td>
+                                    <td><button>Edit</button> <button>Deactivate</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Harshit Rastogi</td>
+                                    <td>Alumni</td>
+                                    <td>Sep 20, 2020</td>
+                                    <td>Active</td>
+                                    <td><button>Edit</button> <button>Deactivate</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Jay Allahabadia</td>
+                                    <td>Alumni</td>
+                                    <td>Jun 12, 2021</td>
+                                    <td>Pending</td>
+                                    <td><button>Edit</button> <button>Activate</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Samay Raina</td>
+                                    <td>Student</td>
+                                    <td>Mar 5, 2025</td>
+                                    <td>Inactive</td>
+                                    <td><button>Edit</button> <button>Activate</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Students Page Content -->
+                <section id="students-page" class="page-section">
+                    <h2>Students Management</h2>
+                    <div class="table-section">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Course</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>S1001</td>
+                                    <td>Krishna Sharma</td>
+                                    <td>Computer Science</td>
+                                    <td>Active</td>
+                                    <td><button>View Profile</button> <button>Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>S1002</td>
+                                    <td>Dora The Explorer</td>
+                                    <td>Engineering</td>
+                                    <td>Active</td>
+                                    <td><button>View Profile</button> <button>Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>S1003</td>
+                                    <td>Charlie Chaplin</td>
+                                    <td>Business Administration</td>
+                                    <td>Inactive</td>
+                                    <td><button>View Profile</button> <button>Activate</button></td>
+                                </tr>
+                                <!-- Add more student rows here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Alumni Page Content -->
+                <section id="alumni-page" class="page-section">
+                    <h2>Alumni Network</h2>
+                    <div class="card-grid">
+                        <div class="card card-alumni-profile">
+                            <i class="icon alumni-icon"><i class="fas fa-user-tie"></i></i>
+                            <div class="card-content">
+                                <h3>Harshit Scott</h3>
+                                <p>Class of 2010</p>
+                                <p>Regional Manager, Dunder Mifflin</p>
+                                <button>View Profile</button>
+                            </div>
+                        </div>
+                        <div class="card card-alumni-profile">
+                            <i class="icon alumni-icon"><i class="fas fa-user-graduate"></i></i>
+                            <div class="card-content">
+                                <h3>Narendra Modi</h3>
+                                <p>Class of 2012</p>
+                                <p>Artist & Office Administrator</p>
+                                <button>View Profile</button>
+                            </div>
+                        </div>
+                        <div class="card card-alumni-profile">
+                            <i class="icon alumni-icon"><i class="fas fa-user-graduate"></i></i>
+                            <div class="card-content">
+                                <h3>Eknath Shinde</h3>
+                                <p>Class of 2009</p>
+                                <p>Assistant Regional Manager (to the Regional Manager)</p>
+                                <button>View Profile</button>
+                            </div>
+                        </div>
+                        <!-- Add more alumni cards here -->
+                    </div>
+                </section>
+
+                <!-- Events Page Content -->
+                <section id="events-page" class="page-section">
+                    <h2>Upcoming Events</h2>
+                    <div class="event-list">
+                        <div class="event-item">
+                            <h3>Campus Recruitment Drive</h3>
+                            <p><i class="far fa-calendar-alt"></i> May 15, 2025, 10:00 AM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Main Auditorium</p>
+                            <button>Register</button>
+                        </div>
+                        <div class="event-item">
+                            <h3>Annual Alumni Meet 2025</h3>
+                            <p><i class="far fa-calendar-alt"></i> May 22, 2025, 06:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> University Grounds</p>
+                            <button>RSVP</button>
+                        </div>
+                        <div class="event-item">
+                            <h3>Web Development Workshop</h3>
+                            <p><i class="far fa-calendar-alt"></i> June 5, 2025, 02:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Computer Lab 2</p>
+                            <button>Enroll</button>
+                        </div>
+                        <!-- Add more event items here -->
+                    </div>
+                </section>
+
+                <!-- Settings Page Content -->
+                <section id="settings-page" class="page-section">
+                    <h2>Settings</h2>
+                    <div class="settings-panel">
+                        <h3>Profile Settings</h3>
+                        <p>Edit your personal information and profile details.</p>
+                        <button>Edit Profile</button>
+                    </div>
+                    <div class="settings-panel">
+                        <h3>Notification Settings</h3>
+                        <p>Manage your email and in-app notification preferences.</p>
+                        <button>Notification Preferences</button>
+                    </div>
+                    <div class="settings-panel">
+                        <h3>Appearance</h3>
+                        <p>Choose between light and dark mode for the dashboard.</p>
+                        <button id="settings-dark-mode-toggle"><i class="fas fa-moon"></i> Toggle Appearance</button>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Chart.js script
+        const feeChartCanvas = document.getElementById('feeChart').getContext('2d');
+        const feeChart = new Chart(feeChartCanvas, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Fee Collection',
+                    data: [65000, 59000, 80000, 81000, 56000, 55000],
+                    backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Expenses',
+                    data: [40000, 39000, 50000, 45000, 40000, 45000],
+                    backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: 'white',
+                            callback: function(value, index, values) {
+                                return '₹' + value.toLocaleString();
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'white'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    },
+                    title: {
+                        display: false, // You can enable and customize chart title here if needed
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
