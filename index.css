@@ -1,0 +1,614 @@
+/* landing.css */
+
+/* Reset and Basic Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Landing Container and Layout */
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.landing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px;
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+}
+
+.landing-header .logo {
+    font-size: 2.2em;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.landing-nav {
+    flex-grow: 1; /* Allow nav to take up space */
+    text-align: center; /* Center nav links */
+}
+
+.landing-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* Make ul inline-block for centering */
+}
+
+.landing-nav ul li {
+    margin-left: 30px;
+    display: inline-block; /* Make li inline-block for horizontal nav */
+}
+
+.landing-nav ul li:first-child {
+    margin-left: 0; /* Remove margin from first nav item */
+}
+
+
+.landing-nav ul li a {
+    text-decoration: none;
+    color: #D3D3D3;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.1em;
+}
+
+.landing-nav ul li a:hover {
+    color: #FFFFFF;
+}
+
+/* Dark Mode Toggle Button in Header - Repositioned */
+#landing-dark-mode-toggle {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 30px; /* Add margin to separate from nav */
+}
+
+#landing-dark-mode-toggle:hover {
+    background-color: #3A3A3A;
+}
+
+
+/* Main Content Styles */
+.landing-main {
+    flex: 1;
+    padding: 0 30px;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 120px 0 80px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Hero Image as Full-Width Background - Increased Opacity */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3; /* Increased opacity - was 0.15 */
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    color: #D3D3D3;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-accent-color);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button i {
+    margin-left: 12px;
+    font-size: 1.1em;
+}
+
+.cta-button:hover {
+    background-color: #42A5F5;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Features Section Styles */
+.features-section {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #222222;
+}
+
+.features-section h2 {
+    font-size: 3em;
+    margin-bottom: 60px;
+    letter-spacing: -1.5px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-card {
+    background-color: #282828;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card i {
+    font-size: 4em;
+    color: var(--primary-accent-color);
+    margin-bottom: 30px;
+}
+
+.feature-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    letter-spacing: -0.8px;
+}
+
+.feature-card p {
+    color: #D3D3D3;
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/* Testimonials Section Styles */
+.testimonials-section {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #282828;
+}
+
+.testimonials-section h2 {
+    font-size: 3em;
+    margin-bottom: 60px;
+    letter-spacing: -1.5px;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 50px;
+    padding: 0 30px 30px 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-slide {
+    background-color: #222222;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    min-width: 450px;
+    flex: 1 0 auto;
+    text-align: left;
+}
+
+.testimonial-slide p {
+    font-style: italic;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-top: 15px;
+    display: block;
+}
+
+/* Footer Styles */
+.landing-footer {
+    background-color: #222222;
+    padding: 30px 30px;
+    text-align: center;
+    border-top: 1px solid #3A3A3A;
+    font-size: 0.95em;
+    color: #D3D3D3;
+}
+
+
+/* ------------------------------------ */
+/* Light Mode Styles for Landing Page */
+/* ------------------------------------ */
+body.light-mode {
+    background-color: #F9F9F9;
+    color: #333333;
+}
+
+body.light-mode .landing-header {
+    background-color: rgba(249, 249, 249, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+body.light-mode .landing-nav ul li a {
+    color: #555555;
+}
+
+body.light-mode .landing-nav ul li a:hover {
+    color: #333333;
+}
+
+body.light-mode #landing-dark-mode-toggle {
+    color: #333333;
+    border-color: #555555;
+}
+
+body.light-mode #landing-dark-mode-toggle:hover {
+    background-color: #F0F0F0;
+}
+
+
+body.light-mode .hero-content h1,
+body.light-mode .features-section h2,
+body.light-mode .testimonials-section h2 {
+    color: #333333;
+}
+
+body.light-mode .hero-content p,
+body.light-mode .landing-nav ul li a,
+body.light-mode .feature-card p,
+body.light-mode .testimonial-slide p,
+body.light-mode .landing-footer {
+    color: #777;
+}
+
+
+body.light-mode .feature-card,
+body.light-mode .testimonial-slide {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .features-section,
+body.light-mode .testimonials-section,
+body.light-mode .landing-footer {
+    background-color: #F0F0F0;
+}
+
+
+/* Example Accent Colors - Customize these! */
+:root {
+    --primary-accent-color: #64B5F6; /* Blue - Consistent with Dashboard */
+    /* You can define more accent colors if needed */
+}
+
+
+/* Responsive Design - Media Queries */
+
+/* For smaller screens (e.g., tablets - landscape and portrait) */
+@media (max-width: 992px) {
+    .landing-header {
+        padding: 25px 30px;
+        flex-direction: column; /* Stack header items */
+        text-align: center;     /* Center align header content */
+    }
+
+    .landing-header .logo {
+        font-size: 2em;
+        margin-bottom: 15px; /* Add margin below logo */
+    }
+
+    .landing-nav {
+        text-align: center; /* Center nav */
+        margin-bottom: 15px; /* Add margin below nav */
+    }
+
+    .landing-nav ul li {
+        margin-left: 20px;
+        display: inline-block;
+    }
+
+    .landing-nav ul li a {
+        font-size: 1em;
+    }
+
+    #landing-dark-mode-toggle {
+        margin-left: 0; /* Reset left margin */
+        padding: 10px 18px;
+        font-size: 0.9em;
+        position: static; /* Reset position for tablet header */
+        width: auto;     /* Auto width for toggle button */
+        margin-top: 10px; /* Add margin above toggle button */
+    }
+
+    .hero-section {
+        padding: 100px 0 70px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5em;
+        margin-bottom: 25px;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        padding: 16px 35px;
+        font-size: 1.1em;
+    }
+
+    .features-section {
+        padding: 80px 0;
+    }
+
+    .features-section h2 {
+        font-size: 2.8em;
+        margin-bottom: 50px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .feature-card {
+        padding: 30px;
+    }
+
+    .feature-card i {
+        font-size: 3.5em;
+        margin-bottom: 25px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.6em;
+        margin-bottom: 18px;
+    }
+
+    .testimonials-section {
+        padding: 80px 0;
+    }
+
+    .testimonials-section h2 {
+        font-size: 2.8em;
+        margin-bottom: 50px;
+    }
+
+    .testimonial-slider {
+        gap: 40px;
+        padding: 0 20px 20px 20px;
+    }
+
+    .testimonial-slide {
+        padding: 30px;
+        min-width: 380px;
+    }
+
+    .landing-footer {
+        padding: 25px 30px;
+        font-size: 0.9em;
+    }
+}
+
+
+/* For even smaller screens (e.g., mobiles - portrait) */
+@media (max-width: 768px) {
+    .landing-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        position: static; /* Reset for mobile header */
+    }
+
+    .landing-header .logo {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .landing-nav {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 10px; /* Reduced margin below nav on mobile */
+    }
+
+    .landing-nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px; /* Reduced margin between nav links on mobile */
+    }
+
+    .landing-nav ul li a {
+        font-size: 1em;
+    }
+
+    #landing-dark-mode-toggle {
+        position: static; /* Reset toggle position for mobile header */
+        margin-top: 15px; /* Reduced margin above toggle on mobile */
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .landing-main {
+        padding: 0 20px;
+    }
+
+    .hero-section {
+        padding: 80px 0 60px 0;
+        text-align: center;
+    }
+
+    .hero-image {
+        position: static;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        margin-bottom: 30px;
+        opacity: 0.2;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8em;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        padding: 14px 30px;
+        font-size: 1em;
+    }
+
+    .features-section {
+        padding: 60px 0;
+    }
+
+    .features-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+
+    .feature-card i {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+
+    .testimonials-section {
+        padding: 60px 0;
+    }
+
+    .testimonials-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+
+    .testimonial-slider {
+        gap: 30px;
+        padding: 0 15px 20px 15px;
+    }
+
+    .testimonial-slide {
+        padding: 25px;
+        min-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        flex: 0 0 auto;
+    }
+
+    .landing-footer {
+        padding: 20px;
+        font-size: 0.9em;
+    }
+}
